@@ -1,0 +1,13 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+.grille {
+    -fx-background-color: rgb(91, 91, 91);
+    -fx-border-width: 0px;
+    -fx-padding: 0px;
+    -fx-spacing: 0px;
+}
+
+.grilleButton {
+    -fx-max-width: 50px;
+    -fx-max-height: 50px;
+}

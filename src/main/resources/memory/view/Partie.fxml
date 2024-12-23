@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #5B5B5B;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="memory.view.PartieController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Outils">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#actionQuitterMenu" text="Quitter" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <bottom>
+      <ButtonBar prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+        <buttons>
+            <Label fx:id="timeLabel" prefWidth="150.0" text="Durée de la partie :" />
+          <Button maxWidth="100.0" mnemonicParsing="false" onAction="#actionQuitterMenu" prefWidth="100.0" text="Quitter" />
+        </buttons>
+         <padding>
+            <Insets right="20.0" />
+         </padding>
+      </ButtonBar>
+   </bottom>
+   <center>
+      <GridPane fx:id="grille" alignment="CENTER" styleClass="grille" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="50.0" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+      </GridPane>
+   </center>
+   <right>
+      <VBox fx:id="histoVBox" alignment="TOP_CENTER" minWidth="170.0" prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: black; -fx-border-width: 2; -fx-border-style: solid;" visible="false" BorderPane.alignment="CENTER">
+         <children>
+            <Text fx:id="joueurJoue" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Le joueur doit joué">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Text>
+            <Text fx:id="Joueur1Stats" strokeType="OUTSIDE" strokeWidth="0.0" text="Joueur1Stats" wrappingWidth="149.21630859375" />
+            <Text fx:id="nbCoupsJ1" strokeType="OUTSIDE" strokeWidth="0.0" text="     nbCoups1" wrappingWidth="149.21630859375" />
+            <Text fx:id="nbCoupsGagnantJ1" strokeType="OUTSIDE" strokeWidth="0.0" text="     nbCoupsGagnant1" wrappingWidth="149.21630859375" />
+            <Text fx:id="Joueur2Stats" strokeType="OUTSIDE" strokeWidth="0.0" text="Joueur2Stats" wrappingWidth="149.21630859375" />
+            <Text fx:id="nbCoupsJ2" strokeType="OUTSIDE" strokeWidth="0.0" text="     nbCoups2" wrappingWidth="149.21630859375" />
+            <Text fx:id="nbCoupsGagnantJ2" strokeType="OUTSIDE" strokeWidth="0.0" text="     nbCoupsGagnant2" wrappingWidth="149.21630859375" />
+         </children>
+         <padding>
+            <Insets left="5.0" right="5.0" />
+         </padding>
+      </VBox>
+   </right>
+</BorderPane>

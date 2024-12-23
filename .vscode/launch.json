@@ -1,0 +1,29 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "FX-jar",
+      "request": "launch",
+      "mainClass": "memory.Main",
+      "projectName": "Memory",
+      "preLaunchTask": "jar"
+    },
+    {
+      "type": "java",
+      "name": "FX-exe-Forced_MVN",
+      "request": "launch",
+      "projectName": "Memory",
+      "mainClass": "memory.Main",
+      "preLaunchTask": "run"
+    },
+    {
+      "type": "java",
+      "name": "FX-exe",
+      "request": "launch",
+      "mainClass": "memory.Main",
+      "projectName": "Memory",
+      "preLaunchTask": "norun"
+  }
+  ]
+}

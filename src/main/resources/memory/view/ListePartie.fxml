@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane minHeight="580.0" minWidth="670.0" prefHeight="580.0" prefWidth="670.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="memory.view.ListePartieController">
+   <bottom>
+      <ButtonBar prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+        <buttons>
+            <Button maxWidth="181.0" mnemonicParsing="false" onAction="#actionSupprimerParties" prefHeight="26.0" prefWidth="182.0" text="Supprimer toute les parties " />
+            <Button maxWidth="100.0" mnemonicParsing="false" onAction="#actionQuitter" text="Quitter" />
+        </buttons>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </ButtonBar>
+   </bottom>
+   <top>
+      <VBox alignment="CENTER" prefHeight="74.0" prefWidth="640.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar prefHeight="28.0" prefWidth="650.0">
+               <menus>
+                  <Menu mnemonicParsing="false" text="Outils">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#actionSupprimerParties" text="Supprimer toutes les parties" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" onAction="#actionQuitter" text="Quitter" />
+                    </items>
+                  </Menu>
+               </menus></MenuBar>
+            <Label contentDisplay="CENTER" text="Historique des parties">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Label>
+            <ButtonBar prefHeight="26.0" prefWidth="657.0">
+              <buttons>
+                  <MenuButton fx:id="mode" maxWidth="105.0" minWidth="105.0" mnemonicParsing="false" prefWidth="105.0" text="mode" ButtonBar.buttonData="LEFT">
+                     <items>
+                        <RadioMenuItem fx:id="modeSolo" mnemonicParsing="false" onAction="#modeSolo" text="Solo">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="modeGrp1" />
+                           </toggleGroup>
+                        </RadioMenuItem>
+                        <RadioMenuItem fx:id="modeDuo" mnemonicParsing="false" onAction="#modeDuo" text="Duo" toggleGroup="$modeGrp1" />
+                        <RadioMenuItem fx:id="modeAucun" mnemonicParsing="false" onAction="#modeAucun" text="Aucun mode" toggleGroup="$modeGrp1" />
+                     </items>
+                  </MenuButton>
+                  <MenuButton fx:id="triche" maxWidth="180.0" minWidth="180.0" mnemonicParsing="false" text="Triche activé et désactivé" ButtonBar.buttonData="LEFT">
+                    <items>
+                        <RadioMenuItem fx:id="tricheActive" mnemonicParsing="false" onAction="#tricheActive" text="Activé">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="tricheGrp" />
+                           </toggleGroup>
+                        </RadioMenuItem>
+                        <RadioMenuItem fx:id="tricheDesactive" mnemonicParsing="false" onAction="#tricheDesactive" text="Desactivé" toggleGroup="$tricheGrp" />
+                        <RadioMenuItem fx:id="tricheDesactiveActive" mnemonicParsing="false" onAction="#tricheDesactiveActive" text="Triche activé et désactivé" toggleGroup="$tricheGrp" />
+                    </items>
+                  </MenuButton>
+                  <MenuButton fx:id="taille" maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" text="Taille" ButtonBar.buttonData="LEFT">
+                     <items>
+                        <RadioMenuItem fx:id="taille2" mnemonicParsing="false" onAction="#taille2" text="2x2">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="tailleGrp" />
+                           </toggleGroup>
+                        </RadioMenuItem>
+                        <RadioMenuItem fx:id="taille4" mnemonicParsing="false" onAction="#taille4" text="4x4" toggleGroup="$tailleGrp" />
+                        <RadioMenuItem fx:id="taille6" mnemonicParsing="false" onAction="#taille6" text="6x6" toggleGroup="$tailleGrp" />
+                        <RadioMenuItem fx:id="taille8" mnemonicParsing="false" onAction="#taille8" text="8x8" toggleGroup="$tailleGrp" />
+                        <RadioMenuItem fx:id="taille0" mnemonicParsing="false" onAction="#taille0" text="Pas de taille" toggleGroup="$tailleGrp" />
+                     </items>
+                  </MenuButton>
+                  <MenuButton fx:id="theme" maxWidth="110.0" minWidth="110.0" mnemonicParsing="false" text="Thème" ButtonBar.buttonData="LEFT">
+                     <items>
+                        <RadioMenuItem fx:id="couleur" mnemonicParsing="false" onAction="#couleur" text="Couleur">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="themeGrp" />
+                           </toggleGroup>
+                        </RadioMenuItem>
+                        <RadioMenuItem fx:id="chiffre" mnemonicParsing="false" onAction="#chiffre" text="Chiffre" toggleGroup="$themeGrp" />
+                        <RadioMenuItem fx:id="lettre" mnemonicParsing="false" onAction="#lettre" text="Lettre" toggleGroup="$themeGrp" />
+                        <RadioMenuItem fx:id="pasTheme" mnemonicParsing="false" onAction="#pasTheme" text="Pas de thème" toggleGroup="$themeGrp" />
+                     </items>
+                  </MenuButton>
+                  <MenuButton fx:id="temps" maxWidth="110.0" minWidth="110.0" mnemonicParsing="false" text="Temps" ButtonBar.buttonData="LEFT">
+                     <items>
+                        <RadioMenuItem fx:id="temps1" mnemonicParsing="false" onAction="#temps1" text="1 secondes">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="tempsGrp" />
+                           </toggleGroup>
+                        </RadioMenuItem>
+                        <RadioMenuItem fx:id="temps2" mnemonicParsing="false" onAction="#temps2" text="2 secondes" toggleGroup="$tempsGrp" />
+                        <RadioMenuItem fx:id="temps3" mnemonicParsing="false" onAction="#temps3" text="3 secondes" toggleGroup="$tempsGrp" />
+                        <RadioMenuItem fx:id="temps4" mnemonicParsing="false" onAction="#temps4" text="4 secondes" toggleGroup="$tempsGrp" />
+                        <RadioMenuItem fx:id="temps0" mnemonicParsing="false" onAction="#temps0" text="Pas de temps" toggleGroup="$tempsGrp" />
+                     </items>
+                  </MenuButton>
+              </buttons>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </ButtonBar>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Text fx:id="textRecherche" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom du joueur">
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </Text>
+                  <TextField fx:id="textFieldRecherche" />
+                  <Button fx:id="btnRecherche" mnemonicParsing="false" onAction="#actionRecherche" text="Rechercher">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <ListView fx:id="listViewPartie" prefHeight="316.0" prefWidth="640.0" style="-fx-background-color: lightblue;" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>
